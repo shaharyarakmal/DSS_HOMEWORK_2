@@ -1,21 +1,21 @@
 import random
 
 
-def function_A(min, max):
+def function_random_integer(min, max):
     """
     Random integer.
     """
     return random.randint(min, max)
 
 
-def function_B():
+def function_random_math_operator():
     """
      returns random operators among +,_,*
     """
     return random.choice(['+', '-', '*'])
 
 
-def function_C(n1, n2, o):
+def function_generate_random_mathproblem(n1, n2, o):
     """
     takes three paramters, first two as integer, and third as an operator.
     generates and returns problem and answer of a mathematical operation as defined
@@ -35,9 +35,9 @@ def math_quiz():
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
     for i in range(int(t_q)): #means this loop would run 3 times i-e we will be asked 3 maths questions'
-        n1 = function_A(1, 10); n2 = function_A(1,  int(5.5)); o = function_B()#n1, n2 select random integers, and o selects a operators defind in function_C'
+        n1 = function_random_integer(1, 10); n2 = function_random_integer(1,  int(5.5)); o = function_random_math_operator()#n1, n2 select random integers, and o selects a operators defind in function_C'
 
-        PROBLEM, ANSWER = function_C(n1, n2, o)
+        PROBLEM, ANSWER = function_generate_random_mathproblem(n1, n2, o)
         print(f"\nQuestion: {PROBLEM}") #problem is printed as a string which was returned by function_C
         useranswer = input("Your answer: ")
         useranswer = int(useranswer) #since all the variables are integer so we are just type casting user's answers into integer for beter comparison
